@@ -2,7 +2,7 @@
 
 ## HARESHUNTER: A Threat Hunting Automation Framework using Collaborative LLM Agents
 
-This repository contains the IEEE paper on HaresHunter, an innovative threat hunting automation framework that leverages collaborative Large Language Model (LLM) agents.
+This repository contains the IEEE paper on HaresHunter, a threat hunting automation framework that leverages collaborative Large Language Model (LLM) agents.
 
 ### 📄 Paper
 
@@ -14,7 +14,8 @@ HaresHunter is a cutting-edge threat hunting automation framework designed to en
 
 ### 📖 Abstract
 
-The paper explores how multiple LLM agents can work collaboratively to automate threat hunting processes, improving the efficiency and effectiveness of security operations. This research demonstrates the potential of AI-driven approaches in cybersecurity.
+Security Operations Center teams face growing challenges as cyber threats become increasingly complex, exceeding the capabilities of manual threat hunting. Current automation solutions provide only partial coverage or require expensive specialized systems, leaving organizations without comprehensive and accessible options for proactive threat detection.
+To address these limitations, we introduce HARESHUNTER, a novel framework that leverages Large Language Models and conversational agents to provide end-to-end automation of the Cyber Threat Hunting cycle through two primary modules: the Knowledge Fusion Module, which centralizes threat intelligence with security telemetry data, and the Threat Profiling & Mitigation Module, which deploys three specialized conversational agents (Hypothesis, Investigation, and Mitigation) to hunt and neutralize threats. Our prototype implements base versions of DeepSeek R1 and Codestral to drive our experiments, achieving an 84% hunt success rate across 26 attack scenarios drawn from a public dataset. HARESHUNTER demonstrates an end-to-end threat hunting automation solution with practical applicability in operationally realistic cybersecurity settings.
 
 ### 📚 Citation
 
@@ -23,23 +24,16 @@ If you use this work in your research, please cite:
 ```bibtex
 @inproceedings{hareshunter,
   title={HARESHUNTER: A Threat Hunting Automation Framework using Collaborative LLM Agents},
-  author={[Authors]},
+  author={[Mohammed Machrouh, Zakaria Yartaoui, Mohammed Akallouch, Ismail Berrada]},
   booktitle={IEEE},
   year={2024}
 }
 ```
-
-*Note: Please update the citation with complete author information and conference details from the paper.*
 
 ### 📂 Repository Contents
 
 - `HaresHunter_IEEE.pdf` - The complete IEEE paper
 - `README.md` - This file
 
-### 🔗 Related Resources
-
-For implementation details, source code, or additional resources related to HaresHunter, please refer to the main project repository (if available).
 
 ---
-
-For questions or more information, please refer to the contact information provided in the paper.
