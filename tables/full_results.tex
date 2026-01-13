@@ -1,0 +1,79 @@
+\begin{table*}[t]
+\centering
+\caption{\textsc{HaresHunter} Benchmark Results; (\cmark): Confirmed (\xmark): Refuted}
+\label{table:hareshunter_results}
+\setlength{\tabcolsep}{4pt}
+\footnotesize
+\begin{tabular}{cl|l|c|cc|cc|cc|c}
+\hline
+& \multirow{2}{*}{\textbf{Attack/Playbook}} & \multirow{2}{*}{\textbf{Technique}} & \multirow{2}{*}{\textbf{Tasks}} & \multicolumn{2}{c|}{\textbf{Accuracy}} & \multicolumn{2}{c|}{\textbf{SR}} & \multicolumn{2}{c|}{\textbf{Decision}} & \multirow{2}{*}{\textbf{RE}} \\
+& & & & \textbf{E1} & \textbf{E2} & \textbf{E1} & \textbf{E2} & \textbf{E1} & \textbf{E2} & \\
+\hline
+\hline
+\multirow{26}{*}{\rotatebox[origin=c]{90}{\textbf{Windows}}} 
+& Access to Microphone Device & T1123 & 2 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& AD Object Access via Replication Services & T1003.006 & 2 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 6 \\
+& AD Root Domain Modification for Replication Services & T1003.006 & 2 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 3 \\
+& Alternate Powershell Hosts & T1059.001 & 3 & 0.66 & 0.60 & 0.66 & 1.00 & \checkmark & \checkmark & 1 \\
+& DLL Process Injection via CreateRemoteThread & T1055.001 & 2 & 0.50 & 1.00 & 0.50 & 1.00 & \checkmark & \checkmark & 4 \\
+& Domain DPAPI Backup Key Extraction & T1003.004 & 4 & 0.25 & 0.50 & 0.25 & 1.00 & \ding{55} & \checkmark & 2 \\
+& Local Powershell Execution & T1059.001 & 6 & 0.55 & 0.57 & 0.83 & 1.00 & \checkmark & \checkmark & 2 \\
+& Local Service Installation & T1543.003 & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& LSASS Memory Read Access & T1003.001 & 4 & 0.50 & 0.50 & 0.50 & 1.00 & \checkmark & \checkmark & 1 \\
+& Reg Modification for Extended NetNTLM Downgrade & T1112 & 3 & 0.75 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 3 \\
+& Reg Modification to Enable Remote Desktop Connections & T1112 & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& Remote Service Control Manager Handle & T1021.002 & 5 & 0.71 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 4 \\
+& Remote DCOM IErtUtil DLL Hijack & T1574.001 & 3 & 1.00 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& Remote Interactive Task Manager LSASS Dump & T1003.001 & 3 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 4 \\
+& Remote Powershell Session & T1021.006 & 5 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 3 \\
+& Remote Service Creation & T1543.003 & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \ding{55} & \checkmark & 2 \\
+& Remote WMI ActiveScriptEventConsumers & T1546.003 & 6 & 0.63 & 0.57 & 0.83 & 1.00 & \ding{55} & \checkmark & 4 \\
+& Remote WMI Wbemcomn DLL Hijack & T1574.001 & 3 & 1.00 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& SAM Registry Hive Handle Request & T1003.002 & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& SMB Create Remote File & T1021.002 & 3 & 0.75 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& SysKey Registry Keys Access & T1003.002 & 1 & 1.00 & -- & 1.00 & -- & \checkmark & \ding{55} & -- \\
+& WDigest Downgrade & T1112 & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& WMI Eventing & T1546.003 & 4 & 0.75 & 1.00 & 0.75 & 1.00 & \checkmark & \checkmark & 7 \\
+& WMI Module Load & T1047 & 1 & 0.50 & -- & 1.00 & -- & \checkmark & \ding{55} & -- \\
+& WMI Win32 Process C\&C Method for Remote Execution & T1047 & 3 & 0.50 & 1.00 & 0.66 & 1.00 & \ding{55} & \checkmark & 3 \\
+& Wuauclt CreateRemoteThread Execution & T1055.001 & 3 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+\cline{2-11}
+& \textbf{Windows Average} & -- & -- & \textbf{0.81} & \textbf{0.77} & \textbf{0.88} & \textbf{0.92} & \textbf{0.84} & \textbf{0.92} & -- \\
+\hline
+\hline
+\multirow{16}{*}{\rotatebox[origin=c]{90}{\added{\textbf{AWS Cloud}}}} 
+& EC2 Get Password Data & T1552.005 & 6 & 1.00 & 1.00 & 1.00 & 1.00 & \ding{55} & \checkmark & 2 \\
+& EC2 Steal Instance Credentials & T1552.005 & 6 & 0.38 & 0.83 & 1.00 & 1.00 & \ding{55} & \checkmark & 3 \\
+& SecretsManager Retrieve Secrets & T1555 & 6 & 0.63 & 0.40 & 1.00 & 0.67 & \checkmark & \checkmark & 1 \\
+& SSM Retrieve SecureString Parameters & T1552.001 & 6 & 0.83 & 0.67 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& CloudTrail Delete & T1562.008 & 6 & 0.67 & 0.71 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& CloudTrail Lifecycle Rule & T1562.008 & 6 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& CloudTrail Stop & T1562.008 & 6 & 1.00 & 1.00 & 1.00 & 1.00 & \ding{55} & \checkmark & 1 \\
+& Organizations Leave & T1562.008 & 6 & 0.67 & 0.50 & 1.00 & 1.00 & \ding{55} & \checkmark & 4 \\
+& VPC Remove Flow Logs & T1562.008 & 6 & 0.75 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& EC2 Enumerate from Instance & T1580 & 6 & 0.33 & 0.83 & 1.00 & 1.00 & \ding{55} & \checkmark & 1 \\
+& EC2 Security Group Open Port 22 Ingress & T1562.007 & 6 & 0.83 & 0.83 & 1.00 & 1.00 & \ding{55} & \checkmark & 2 \\
+& EC2 Share AMI & T1537 & 6 & 1.00 & 1.00 & 0.67 & 1.00 & \ding{55} & \checkmark & 1 \\
+& EC2 Share EBS Snapshot & T1537 & 6 & 0.75 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& RDS Share Snapshot & T1537 & 6 & 0.40 & 0.57 & 0.67 & 1.00 & \ding{55} & \checkmark & 1 \\
+& S3 Backdoor Bucket Policy & T1098 & 6 & 0.56 & 1.00 & 1.00 & 1.00 & \ding{55} & \checkmark & 2 \\
+& IAM Backdoor Role & T1098.001 & 7 & 0.57 & 0.75 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+\cline{2-11}
+& \textbf{AWS Cloud Average} & -- & -- & \textbf{0.71} & \textbf{0.82} & \textbf{0.96} & \textbf{0.98} & \textbf{0.44} & \textbf{1.00} & -- \\
+\hline
+\hline
+\multirow{6}{*}{\rotatebox[origin=c]{90}{\textbf{Linux}}} 
+& Reconnaissance Process Listing & -- & 4 & 0.60 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& Process Masquerading & -- & 6 & 0.88 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+& Malware Staging Execution & -- & 5 & 1.00 & 0.80 & 1.00 & 1.00 & \ding{55} & \checkmark & 3 \\
+& Firewall C2 Enablement & -- & 6 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& Cred Theft SSH Lateral Movement & -- & 5 & 0.60 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 \\
+& Shell Persistence Cron & -- & 6 & 0.88 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 2 \\
+\cline{2-11}
+& \textbf{Linux Average} & -- & -- & \textbf{0.83} & \textbf{0.88} & \textbf{1.00} & \textbf{1.00} & \textbf{0.83} & \textbf{1.00} & -- \\
+\hline
+\hline
+& \textbf{Overall Average} & -- & -- & \textbf{0.78} & \textbf{0.81} & \textbf{0.92} & \textbf{0.96} & \textbf{0.71} & \textbf{0.96} & -- \\
+\hline
+\end{tabular}
+\end{table*}
