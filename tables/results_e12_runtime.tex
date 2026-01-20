@@ -1,0 +1,84 @@
+\begin{table*}[t]
+\centering
+\caption{\textsc{HaresHunter} Benchmark Results; (\cmark): Confirmed (\xmark): Refuted}
+\label{table:hareshunter_results}
+\setlength{\tabcolsep}{3pt}
+\footnotesize
+\begin{tabular}{cl|c|cc|cc|cc|c|cc}
+\hline
+& \multirow{2}{*}{\textbf{Attack/Playbook}} & \multirow{2}{*}{\textbf{Tasks}} &
+\multicolumn{2}{c|}{\textbf{Accuracy}} &
+\multicolumn{2}{c|}{\textbf{SR}} &
+\multicolumn{2}{c|}{\textbf{Decision}} &
+\multirow{2}{*}{\textbf{RE}} &
+\multirow{2}{*}{\textbf{t/Hunt (sec)}} &
+\multirow{2}{*}{\textbf{t/Task (sec)}} \\
+& & & \textbf{E1} & \textbf{E2} & \textbf{E1} & \textbf{E2} & \textbf{E1} & \textbf{E2} & & & \\
+\hline
+\hline
+
+% ================= WINDOWS =================
+\multirow{26}{*}{\rotatebox[origin=c]{90}{\textbf{Windows}}}
+& Access to Microphone Device & 2 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& AD Object Access via Replication Services & 2 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 6 & -- & -- \\
+& AD Root Domain Modification for Replication Services & 2 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 3 & -- & -- \\
+& Alternate Powershell Hosts & 3 & 0.66 & 0.60 & 0.66 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& DLL Process Injection via CreateRemoteThread & 2 & 0.50 & 1.00 & 0.50 & 1.00 & \checkmark & \checkmark & 4 & -- & -- \\
+& Domain DPAPI Backup Key Extraction & 4 & 0.25 & 0.50 & 0.25 & 1.00 & \ding{55} & \checkmark & 2 & -- & -- \\
+& Local Powershell Execution & 6 & 0.55 & 0.57 & 0.83 & 1.00 & \checkmark & \checkmark & 2 & -- & -- \\
+& Local Service Installation & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& LSASS Memory Read Access & 4 & 0.50 & 0.50 & 0.50 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& Reg Modification for Extended NetNTLM Downgrade & 3 & 0.75 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 3 & -- & -- \\
+& Reg Modification to Enable Remote Desktop Connections & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& Remote Service Control Manager Handle & 5 & 0.71 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 4 & -- & -- \\
+& Remote DCOM IErtUtil DLL Hijack & 3 & 1.00 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 & -- & -- \\
+& Remote Interactive Task Manager LSASS Dump & 3 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 4 & -- & -- \\
+& Remote Powershell Session & 5 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 3 & -- & -- \\
+& Remote Service Creation & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \ding{55} & \checkmark & 2 & -- & -- \\
+& Remote WMI ActiveScriptEventConsumers & 6 & 0.63 & 0.57 & 0.83 & 1.00 & \ding{55} & \checkmark & 4 & -- & -- \\
+& Remote WMI Wbemcomn DLL Hijack & 3 & 1.00 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 & -- & -- \\
+& SAM Registry Hive Handle Request & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& SMB Create Remote File & 3 & 0.75 & 0.50 & 1.00 & 1.00 & \checkmark & \checkmark & 2 & -- & -- \\
+& SysKey Registry Keys Access & 1 & 1.00 & -- & 1.00 & -- & \checkmark & \ding{55} & -- & -- & -- \\
+& WDigest Downgrade & 1 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+& WMI Eventing & 4 & 0.75 & 1.00 & 0.75 & 1.00 & \checkmark & \checkmark & 7 & -- & -- \\
+& WMI Module Load & 1 & 0.50 & -- & 1.00 & -- & \checkmark & \ding{55} & -- & -- & -- \\
+& WMI Win32 Process C\&C Method for Remote Execution & 3 & 0.50 & 1.00 & 0.66 & 1.00 & \ding{55} & \checkmark & 3 & -- & -- \\
+& Wuauclt CreateRemoteThread Execution & 3 & 1.00 & 1.00 & 1.00 & 1.00 & \checkmark & \checkmark & 1 & -- & -- \\
+\cline{2-12}
+& \textbf{Windows Average} & -- & \textbf{0.81} & \textbf{0.77} & \textbf{0.88} & \textbf{0.92} & \textbf{0.84} & \textbf{0.92} & -- & -- & -- \\
+
+% ================= AWS =================
+\hline
+\multirow{16}{*}{\rotatebox[origin=c]{90}{\textcolor{blue}{\textbf{AWS Cloud}}}}
+& \textcolor{blue}{EC2 Steal Instance Credentials} & \textcolor{blue}{6} & \textcolor{blue}{0.38} & \textcolor{blue}{0.83} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\ding{55}} & \textcolor{blue}{\checkmark} & \textcolor{blue}{3} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{SecretsManager Retrieve Secrets} & \textcolor{blue}{6} & \textcolor{blue}{0.63} & \textcolor{blue}{0.40} & \textcolor{blue}{1.00} & \textcolor{blue}{0.67} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{SSM Retrieve SecureString Parameters} & \textcolor{blue}{6} & \textcolor{blue}{0.83} & \textcolor{blue}{0.67} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{CloudTrail Delete} & \textcolor{blue}{6} & \textcolor{blue}{0.67} & \textcolor{blue}{0.71} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{CloudTrail Lifecycle Rule} & \textcolor{blue}{6} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{Organizations Leave} & \textcolor{blue}{6} & \textcolor{blue}{0.67} & \textcolor{blue}{0.50} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\ding{55}} & \textcolor{blue}{\checkmark} & \textcolor{blue}{4} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{VPC Remove Flow Logs} & \textcolor{blue}{6} & \textcolor{blue}{0.75} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{EC2 Security Group Open Port 22 Ingress} & \textcolor{blue}{6} & \textcolor{blue}{0.83} & \textcolor{blue}{0.83} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\ding{55}} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{EC2 Share EBS Snapshot} & \textcolor{blue}{6} & \textcolor{blue}{0.75} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{RDS Share Snapshot} & \textcolor{blue}{6} & \textcolor{blue}{0.40} & \textcolor{blue}{0.57} & \textcolor{blue}{0.67} & \textcolor{blue}{1.00} & \textcolor{blue}{\ding{55}} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{S3 Backdoor Bucket Policy} & \textcolor{blue}{6} & \textcolor{blue}{0.56} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\ding{55}} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{IAM Backdoor Role} & \textcolor{blue}{7} & \textcolor{blue}{0.57} & \textcolor{blue}{0.75} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+\cline{2-12}
+& \textcolor{blue}{\textbf{AWS Cloud Average}} & \textcolor{blue}{--} & \textcolor{blue}{\textbf{0.67}} & \textcolor{blue}{\textbf{0.77}} & \textcolor{blue}{\textbf{0.97}} & \textcolor{blue}{\textbf{0.97}} & \textcolor{blue}{\textbf{0.58}} & \textcolor{blue}{\textbf{1.00}} & \textcolor{blue}{\textbf{--}} & \textcolor{blue}{\textbf{--}} & \textcolor{blue}{\textbf{--}} \\
+% ================= LINUX =================
+\hline
+\multirow{6}{*}{\rotatebox[origin=c]{90}{\textcolor{blue}{\textbf{Linux}}}}
+& \textcolor{blue}{Reconnaissance Process Listing} & \textcolor{blue}{4} & \textcolor{blue}{0.60} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{Process Masquerading} & \textcolor{blue}{6} & \textcolor{blue}{0.88} & \textcolor{blue}{0.50} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{Malware Staging Execution} & \textcolor{blue}{5} & \textcolor{blue}{1.00} & \textcolor{blue}{0.80} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\ding{55}} & \textcolor{blue}{\checkmark} & \textcolor{blue}{3} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{Firewall C2 Enablement} & \textcolor{blue}{6} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{Cred Theft SSH Lateral Movement} & \textcolor{blue}{5} & \textcolor{blue}{0.60} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{1} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+& \textcolor{blue}{Shell Persistence Cron} & \textcolor{blue}{6} & \textcolor{blue}{0.88} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{1.00} & \textcolor{blue}{\checkmark} & \textcolor{blue}{\checkmark} & \textcolor{blue}{2} & \textcolor{blue}{--} & \textcolor{blue}{--} \\
+\cline{2-12}
+& \textcolor{blue}{\textbf{Linux Average}} & \textcolor{blue}{--} & \textcolor{blue}{\textbf{0.83}} & \textcolor{blue}{\textbf{0.88}} & \textcolor{blue}{\textbf{1.00}} & \textcolor{blue}{\textbf{1.00}} & \textcolor{blue}{\textbf{0.83}} & \textcolor{blue}{\textbf{1.00}} & \textcolor{blue}{--} & \textcolor{blue}{\textbf{--}} & \textcolor{blue}{\textbf{--}} \\
+\hline
+\hline
+& \textbf{Overall Average} & -- & \textbf{0.77} & \textbf{0.81} & \textbf{0.95} & \textbf{0.96} & \textbf{0.75} & \textbf{0.97} & -- & -- & -- \\
+\hline
+\end{tabular}
+\end{table*}
